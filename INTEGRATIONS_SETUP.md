@@ -4,7 +4,7 @@ Implementação local sincronizada do produto Universal para esta instalação H
 
 ## Acesso e configuração
 
-URL local: http://localhost:3000
+URL local: http://localhost:4100
 
 - **Configurações → Integrações**: Calendar, Rotas e distância, Google Ads e Meta Ads.
 - **Financeiro → Marketing**: gastos, campanhas e detalhamento diário.
@@ -18,8 +18,8 @@ O modelo é `.env.example`. Para uma instalação nova, copie-o para `.env`; nes
 
 | Variável | Uso |
 | --- | --- |
-| APP_ORIGIN | Origem exata do sistema. Local: http://localhost:3000; HTTPS obrigatório no modo production |
-| PORT | Porta local, 3000 nesta instalação |
+| APP_ORIGIN | Origem exata do sistema. Local: http://localhost:4100; HTTPS obrigatório no modo production |
+| PORT | Porta local, 4100 nesta instalação |
 | DATA_DIR | Diretório privado do SQLite, PDFs e chave local; preservar o existente |
 | HEIGIT_API_KEY | Chave privada por instalação para Pelias e openrouteservice; somente no servidor |
 | HEIGIT_API_BASE_URL | Base atual; padrão https://api.heigit.org |
@@ -33,11 +33,11 @@ Em desenvolvimento, o cofre usa `data/token-key` quando não há chave no ambien
 
 ## Callbacks exatos
 
-Para APP_ORIGIN=http://localhost:3000:
+Para APP_ORIGIN=http://localhost:4100:
 
-- Calendar/Drive: `http://localhost:3000/api/google/callback`
-- Google Ads: `http://localhost:3000/api/integrations/google-ads/callback`
-- Meta Ads: `http://localhost:3000/api/integrations/meta-ads/callback`
+- Calendar/Drive: `http://localhost:4100/api/google/callback`
+- Google Ads: `http://localhost:4100/api/integrations/google-ads/callback`
+- Meta Ads: `http://localhost:4100/api/integrations/meta-ads/callback`
 
 Os callbacks de anúncios derivam de APP_ORIGIN. Cadastre cada URI exatamente no aplicativo correspondente. A autorização deve começar pelo botão do sistema, com a sessão do administrador aberta no mesmo navegador; o retorno valida sessão, provedor, expiração e uso único do state.
 
